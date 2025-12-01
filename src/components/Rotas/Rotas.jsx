@@ -19,6 +19,8 @@ const Rotas = () => {
     city: "",
     state: "",
     country: "Brazil",
+    district: "",
+
   });
 
   const COMPANY_ID = 1;
@@ -67,11 +69,16 @@ const Rotas = () => {
 
   const addGeoPoint = async () => {
     try {
-      // Converte latitude e longitude para número antes de enviar
       const payload = {
-        ...novoPoint,
+        label: novoPoint.label,
         latitude: Number(novoPoint.latitude),
         longitude: Number(novoPoint.longitude),
+        geopoint_type: novoPoint.type,
+        city: novoPoint.city,
+        state: novoPoint.state,
+        country: novoPoint.country,
+        district: novoPoint.district || "",
+        user_id: null
       };
 
       const response = await fetch(`http://127.0.0.1:8000/geopoint/${COMPANY_ID}`, {
@@ -83,24 +90,15 @@ const Rotas = () => {
       if (!response.ok) throw new Error("Erro ao adicionar geopoint");
 
       await response.json();
-      await fetchGeoPoints(); // Atualiza o mapa
+      await fetchGeoPoints();
 
-      setNovoPoint({
-        label: "",
-        latitude: "",
-        longitude: "",
-        type: "origin",
-        city: "",
-        state: "",
-        country: "Brazil",
-      });
-
-      alert("Geopoint criado com sucesso!");
+      alert("Geopoint criado!");
     } catch (err) {
       console.error(err);
       alert("Erro ao criar geopoint");
     }
   };
+
 
   useEffect(() => {
     fetchUsuarios();
@@ -184,6 +182,7 @@ const Rotas = () => {
             <input type="text" name="label" placeholder="Nome / Label" value={novoPoint.label} onChange={handleChange} />
             <input type="number" name="latitude" placeholder="Latitude" value={novoPoint.latitude} onChange={handleChange} />
             <input type="number" name="longitude" placeholder="Longitude" value={novoPoint.longitude} onChange={handleChange} />
+            <input type="text" name="district" placeholder="Bairro / Distrito" value={novoPoint.district} onChange={handleChange} />
             <input type="text" name="city" placeholder="Cidade" value={novoPoint.city} onChange={handleChange} />
             <input type="text" name="state" placeholder="Estado" value={novoPoint.state} onChange={handleChange} />
             <input type="text" name="country" placeholder="País" value={novoPoint.country} onChange={handleChange} />

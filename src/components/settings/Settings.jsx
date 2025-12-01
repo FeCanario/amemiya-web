@@ -89,11 +89,34 @@ function Settings() {
     }
   };
 
-  // --- SALVAR INFORMAÇÕES PESSOAIS ---
   const saveProfileInfo = async () => {
-    localStorage.setItem("userName", name);
-    localStorage.setItem("userEmail", email);
-    alert("Informações salvas!");
+    try {
+      const body = {
+        user_name: name,
+        email: email
+      };
+
+      const response = await fetch(`http://127.0.0.1:8000/user/${userId}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
+
+      if (response.status === 204) {
+        // Atualiza localStorage
+        localStorage.setItem("userName", name);
+        localStorage.setItem("userEmail", email);
+
+        alert("Informações atualizadas!");
+      } else {
+        alert("Erro ao atualizar informações.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Erro no servidor.");
+    }
   };
 
   return (
