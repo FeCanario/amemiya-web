@@ -1,0 +1,24 @@
+/* ANIMAÇÃO MAIS LIMPA POSSÍVEL — zero flicker */
+
+.page-enter {
+  opacity: 0;
+  transform: translateY(3px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: opacity 250ms ease, transform 250ms ease;
+}
+
+.page-exit {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+
+.page-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}

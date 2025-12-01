@@ -1,0 +1,313 @@
+/* ----------- LAYOUT GERAL ----------- */
+.page-container {
+  display: flex !important;
+  background: linear-gradient(135deg, #fafafa, #f0f0f0) !important;
+  height: 100vh !important;
+  overflow: hidden !important;
+}
+
+.page-content {
+  flex: 1 !important;
+  padding: 24px 40px !important;
+  background: #fafafa !important;
+  overflow-y: auto !important;
+  transition: 0.3s !important;
+}
+
+/* ----------- BANNER ----------- */
+.vehicles-banner.ui {
+  width: 100% !important;
+  height: 220px !important;
+  background: #fff !important;
+  border-radius: 18px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 40px 50px !important;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.06) !important;
+  margin-bottom: 35px !important;
+  gap: 40px !important;
+}
+
+.banner-content {
+  text-align: left !important;
+}
+
+.banner-title {
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  color: #111 !important;
+  margin-bottom: 6px !important;
+}
+
+.banner-subtitle {
+  font-size: 17px !important;
+  color: #555 !important;
+}
+
+.banner-illustration {
+  width: 240px !important;
+  object-fit: contain !important;
+  transition: transform 0.3s ease !important;
+}
+
+.banner-illustration:hover {
+  transform: translateY(-4px) !important;
+}
+
+/* ----------- HEADER ---------- */
+.page-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 18px !important;
+}
+
+.page-header h2 {
+  font-size: 26px !important;
+  font-weight: bold !important;
+  color: #111 !important;
+}
+
+/* ----------- BOTÕES ----------- */
+.btn-primary {
+  background: #000 !important;
+  color: #fff !important;
+  padding: 10px 20px !important;
+  font-size: 15px !important;
+  border-radius: 10px !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: 0.25s !important;
+}
+
+.btn-primary:hover {
+  opacity: 0.85 !important;
+}
+
+.action-btn {
+  padding: 8px 12px !important;
+  border-radius: 8px !important;
+  border: none !important;
+  cursor: pointer !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  transition: 0.2s !important;
+  margin: 0 2px !important;
+}
+
+.action-btn.edit {
+  background: #0066ff !important;
+  color: #fff !important;
+}
+
+.action-btn.edit:hover {
+  background: #0053d4 !important;
+}
+
+.action-btn.delete {
+  background: #ff3b3b !important;
+  color: #fff !important;
+}
+
+.action-btn.delete:hover {
+  background: #d53232 !important;
+}
+
+/* ----------- TABELA ----------- */
+.vehicle-table {
+  padding-bottom: 40px !important;
+}
+
+table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  background: #fff !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.07) !important;
+  table-layout: fixed !important;
+  transition: 0.25s ease-in-out !important;
+}
+
+table tbody tr:hover {
+  background: #f9f9f9 !important;
+}
+
+thead {
+  background: #f4f4f4 !important;
+}
+
+th {
+  padding: 14px 12px !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: #333 !important;
+  text-align: center !important;
+}
+
+td {
+  padding: 12px 10px !important;
+  border-top: 1px solid #eee !important;
+  font-size: 14px !important;
+  color: #111 !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+.empty-msg {
+  padding: 35px !important;
+  text-align: center !important;
+  color: #777 !important;
+}
+
+/* Colunas */
+.vehicle-table th:nth-child(1),
+.vehicle-table td:nth-child(1) {
+  width: 8% !important;
+}
+
+.vehicle-table th:nth-child(2),
+.vehicle-table td:nth-child(2) {
+  width: 20% !important;
+}
+
+.vehicle-table th:nth-child(3),
+.vehicle-table td:nth-child(3) {
+  width: 12% !important;
+}
+
+.vehicle-table th:nth-child(4),
+.vehicle-table td:nth-child(4) {
+  width: 14% !important;
+}
+
+.vehicle-table th:nth-child(5),
+.vehicle-table td:nth-child(5) {
+  width: 14% !important;
+}
+
+.vehicle-table th:nth-child(6),
+.vehicle-table td:nth-child(6) {
+  width: 10% !important;
+}
+
+.vehicle-table th:nth-child(7),
+.vehicle-table td:nth-child(7) {
+  width: 12% !important;
+}
+
+.table-actions {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 6px !important;
+}
+
+/* -------- MODAL -------- */
+.modal-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(0,0,0,0.4) !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  backdrop-filter: blur(3px) !important;
+}
+
+.modal-box {
+  background: #fff !important;
+  padding: 28px !important;
+  width: 420px !important;
+  border-radius: 14px !important;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.25) !important;
+  animation: fadeIn 0.2s ease !important;
+}
+
+.modal-box input {
+  width: 100% !important;
+  padding: 12px !important;
+  margin-bottom: 14px !important;
+  border-radius: 10px !important;
+  border: 1px solid #ddd !important;
+  font-size: 14px !important;
+}
+
+.btn-secondary {
+  background: #e5e5e5 !important;
+  padding: 10px 18px !important;
+  border-radius: 10px !important;
+  color: #444 !important;
+  cursor: pointer !important;
+  border: none !important;
+}
+
+.modal-actions {
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+.tittle {
+  color: #000 !important;
+  font-size: 20px !important;
+  margin-bottom: 10px !important;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 !important; transform: scale(0.95) !important; }
+  to { opacity: 1 !important; transform: scale(1) !important; }
+}
+
+.status-badge {
+  padding: 6px 12px !important;
+  border-radius: 20px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  display: inline-block !important;
+}
+
+/* Status ATIVO */
+.status-ok {
+  background: #d4f8d4 !important;
+  color: #0a8a0a !important;
+  border: 1px solid #8be08b !important;
+}
+
+/* Status INATIVO */
+.status-off {
+  background: #ffe1e1 !important;
+  color: #b90000 !important;
+  border: 1px solid #ff8a8a !important;
+}
+
+/* -------- BOTÕES DE AÇÃO NA TABELA -------- */
+
+
+
+.ui-btn {
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff; /* deixa o texto sempre branco */
+  transition: 0.25s ease;
+  margin-bottom: 10px;
+}
+
+/* Botão editar */
+.ui-btn.edit {
+  background: #007bff;  /* azul */
+}
+
+.ui-btn.edit:hover {
+  background: #0062d6;
+}
+
+/* Botão excluir */
+.ui-btn.delete {
+  background: #ff3b3b; /* vermelho */
+}
+
+.ui-btn.delete:hover {
+  background: #d63131;
+}
