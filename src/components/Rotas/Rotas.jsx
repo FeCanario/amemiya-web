@@ -6,6 +6,9 @@ import "leaflet/dist/leaflet.css";
 import "./Rotas.css";
 import { motion } from "framer-motion";
 
+const userId = localStorage.getItem("userId");
+
+
 const Rotas = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [usuarios, setUsuarios] = useState([]);
@@ -78,7 +81,7 @@ const Rotas = () => {
         state: novoPoint.state,
         country: novoPoint.country,
         district: novoPoint.district || "",
-        user_id: null
+        user_id: userId
       };
 
       const response = await fetch(`http://127.0.0.1:8000/geopoint/${COMPANY_ID}`, {
@@ -195,7 +198,6 @@ const Rotas = () => {
           </div>
         </motion.div>
 
-        <br /><br />
       </motion.div>
     </div>
   );
