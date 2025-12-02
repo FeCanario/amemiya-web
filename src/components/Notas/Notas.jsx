@@ -35,7 +35,7 @@ function Notas() {
   const [attachments, setAttachments] = useState([]);
   const [progress, setProgress] = useState(0);
 
-  const companyId = 10;
+  const companyId = 1;
   const userId = 1;
 
   // -----------------------------------------------
@@ -231,20 +231,10 @@ function Notas() {
 
           {/* ------------------ TABELA API -------------------- */}
           <div className="dashboard-card">
-            <h3 className="card-title">Histórico</h3>
+            <h3 className="card-title"></h3>
 
             <div className="table-wrapper">
               <table className="dashboard-table large-table">
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Tipo</th>
-                    <th>Categoria</th>
-                    <th>Data</th>
-                    <th>Ações</th>
-                  </tr>
-                </thead>
-
                 <tbody>
                   {attachments.length > 0 ? (
                     attachments.map((a) => (
@@ -267,14 +257,12 @@ function Notas() {
                     ))
                   ) : (
                     <tr>
-                      <td colSpan="5">Nenhum arquivo enviado.</td>
                     </tr>
                   )}
                 </tbody>
               </table>
             </div>
           </div>
-
         </div>
       </div>
     </div>
